@@ -1,0 +1,9 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = true
+	symlinks = false
+	ignorecase = true
+[remote "logica-computacional-ep2"]
+	url = git@github.com:ViniciusArielMM/logica-computacional-ep2.git
+	fetch = +refs/heads/*:refs/remotes/logica-computacional-ep2/*
