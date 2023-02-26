@@ -34,4 +34,8 @@
   [index rule-hash-map word-length terminal-symbols language-chains]
   (if (= index (count language-chains))
     language-chains
-    nil))
+    (if (has-only-terminal-symbols (nth language-chains index) terminal-symbols)
+		(generate-language-chains (+ index 1) rule-hash-map word-length terminal-symbols language-chains)
+		()		;;continuar lógica
+	)
+	))
