@@ -1,27 +1,44 @@
 (ns logica-computacional-ep2.functions
   (:require [clojure.data.csv :as csv]
-            [clojure.java.io :as io]))
+            [clojure.java.io :as io]
+			[clojure.string :as str]))
 
-(defn read-csv
-	"Reads a .csv file and returns a LAZY SEQUENCE in which each element is a PERSISTENT VECTOR that represents one of
-	the rows of the .csv data. Each element in a row is a STRING."
-	[csv-file-name]
-
-	(with-open [reader (io/reader csv-file-name)]
-		(doall
-			(csv/read-csv reader)
-		)
+(defn extract-data
+	[fname]
+	(let [data (slurp fname)
+		data-splitted (str/split data #"\n")
+	]
+	data-splitted
 	)
 )
 
-;; (defn build-language-rules-matrix
-;; 	[csv-data]
+(defn get-non-terminal-symbols
+	[data-splitted]
+	(str/split (first data-splitted) #" ")
+)
 
-;; 	(def language-rules-matrix [
-;; 		;; for each element in csv-data (persistent vector)
-;; 			;; creates a vector in which the first element of the vector is also the first element of the persistent vector
-;; 			;; the second element of the vector should be another vector with the remaining data of the persistent vector
-;; 			;; 
-;; 	]
-;; 	)
+(defn get-terminal-symbols
+	[data-splitted]
+	(str/split (second data-splitted) #" ")
+)
+
+(defn get-inital-symbol
+	[data-splitted]
+	(last data-splitted)
+)
+
+(defn build-language-hash-map
+	[data-splitted non-terminal-symbols]
+	;; (hash-map)
+	(let [rule-hash-map {}]
+	(for [i (range (count non-terminal-symbols))]
+			;; (assoc rule-hash-map (nth non-terminal-symbols i)  (str/split (nth data-splitted (+ i 2)) #" "))
+			
+	)
+	(println rule-hash-map)
+	)
+)
+
+;; (defn generate-language-chain
+;; 	[chain]
 ;; )
