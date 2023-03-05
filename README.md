@@ -1,44 +1,20 @@
 # logica-computacional-ep2
 
-FIXME: description
-
-## Installation
-
-Download from http://example.com/FIXME.
+Solução do Segundo exercício programa da disciplina de Lógica Computacional
 
 ## Usage
 
-FIXME: explanation
+Para rodar um dos exemplos, utilize os comandos:
 
-    $ java -jar logica-computacional-ep2-0.1.0-standalone.jar [args]
+lein run "src/logica_computacional_ep2/teste.txt" <cadeia_a_ser_checada>
+OU
+lein run "src/logica_computacional_ep2/teste2.txt" <cadeia_a_ser_checada>
 
-## Options
 
-FIXME: listing of options this app accepts.
+Em que a cadeia a ser checada deve estar entre ASPAS.
 
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
-
-## License
-
-Copyright © 2023 FIXME
-
-This program and the accompanying materials are made available under the
-terms of the Eclipse Public License 2.0 which is available at
-http://www.eclipse.org/legal/epl-2.0.
-
-This Source Code may also be made available under the following Secondary
-Licenses when the conditions for such availability set forth in the Eclipse
-Public License, v. 2.0 are satisfied: GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or (at your
-option) any later version, with the GNU Classpath Exception which is available
-at https://www.gnu.org/software/classpath/license.html.
+Cada um dos testes definidos em seus arquivos .txt utiliza uma gramática diferente, que segue as seguintes específicações:
+1ª linha: Símbolos não-terminais
+2ª linha: Símbolos terminais
+3ª até a antepenútima linha: Regras de formação para cada um dos símbolos não-terminais definidos, em orderm e em cada linha
+Última linha: Símbolo não-terminal que dá inicício à cadeia.
